@@ -20,26 +20,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | Reddit| This Reddit thread contains student opinions about overall dining hall food quality at UIC, including taste, variety, and consistency. It provides firsthand experiences that reflect general satisfaction and complaints about campus dining.
-| https://www.reddit.com/r/uichicago/comments/vpdzh1/how_is_the_dining_hall_food/|
-| 2 | Reddit| This post includes student reactions to portion sizes and perceived quality of dining hall meals.|https://www.reddit.com/r/uichicago/comments/1idebe4/i_just_have_to_laugh_uic_dining/ |
-| 3 |Reddit |This thread discusses dining hall menus, availability of food options, and student opinions on meal variety. It also includes commentary on how consistent or reliable dining hall offerings are over time.
- | https://www.reddit.com/r/uichicago/comments/1fn1kxn/dining_hall_menu/|
-| 4 |Reddit | This Reddit thread explains how UIC’s dining system operates, including meal swipes, dining hall access, and how students use their meal plans in practice.
-It provides a practical, student-written explanation of dining logistics.
- |https://www.reddit.com/r/uichicago/comments/ifvi9y/dining_service_stupid_question_how_does_it_work/|
-| 5 |Yelp reviews| This Yelp page contains user-generated reviews and ratings for the UIC Student Center West Food Court, including feedback on food quality, pricing, and wait times.
-| https://www.yelp.com/biz/uic-student-center-west-food-court-chicago|
-| 6 | UIC dining website| This official site provides information on dining halls, meal plans, menus, and operating hours. It serves as a factual reference for campus dining structure and available services.
-|https://dining.uic.edu/|
-| 7 |UIC website | This page describes the Student Center facilities including dining areas and food court locations.
-It provides structural and logistical information about where dining services are located on campus. |https://studentcenters.uic.edu/about/|
-| 8 |RestaurantGuru Website |This site aggregates reviews and ratings for the campus food court from multiple users.
-It provides summarized opinions and keyword-based insights about food quality and service.
- | https://restaurantguru.com/UIC-Student-Center-West-Food-Court-Chicago|
-| 9 | Novacircle Website| This page gives a summarized overview of the food court along with user impressions.
-It includes general pros and cons based on visitor experiences and informal reviews.|https://www.novacircle.com/spots/north-america/united-states/illinois/chicago/chicago-il/uic-student-center-west-food-court-8db8f8 |
-| 10 | Sodexo website| This page is the official UIC Dining Services homepage, providing an overview of campus dining options, locations, and meal plan information. | https://uicdining.sodexomyway.com/en-us/|
+| 1 | Reddit | This Reddit thread contains student opinions about overall dining hall food quality at UIC, including taste, variety, and consistency. It provides firsthand experiences that reflect general satisfaction and complaints about campus dining. | https://www.reddit.com/r/uichicago/comments/vpdzh1/how_is_the_dining_hall_food/ |
+| 2 | Reddit | This post includes student reactions to portion sizes and perceived quality of dining hall meals. | https://www.reddit.com/r/uichicago/comments/1idebe4/i_just_have_to_laugh_uic_dining/ |
+| 3 | Reddit | This thread discusses dining hall menus, availability of food options, and student opinions on meal variety. It also includes commentary on how consistent or reliable dining hall offerings are over time. | https://www.reddit.com/r/uichicago/comments/1fn1kxn/dining_hall_menu/ |
+| 4 | Reddit | This Reddit thread explains how UIC's dining system operates, including meal swipes, dining hall access, and how students use their meal plans in practice. It provides a practical, student-written explanation of dining logistics. | https://www.reddit.com/r/uichicago/comments/ifvi9y/dining_service_stupid_question_how_does_it_work/ |
+| 5 | Yelp reviews | This Yelp page contains user-generated reviews and ratings for the UIC Student Center West Food Court, including feedback on food quality, pricing, and wait times. | https://www.yelp.com/biz/uic-student-center-west-food-court-chicago |
+| 6 | UIC dining website | This official site provides information on dining halls, meal plans, menus, and operating hours. It serves as a factual reference for campus dining structure and available services. | https://dining.uic.edu/ |
+| 7 | UIC website | This page describes the Student Center facilities including dining areas and food court locations. It provides structural and logistical information about where dining services are located on campus. | https://studentcenters.uic.edu/about/ |
+| 8 | RestaurantGuru Website | This site aggregates reviews and ratings for the campus food court from multiple users. It provides summarized opinions and keyword-based insights about food quality and service. | https://restaurantguru.com/UIC-Student-Center-West-Food-Court-Chicago |
+| 9 | Novacircle Website | This page gives a summarized overview of the food court along with user impressions. It includes general pros and cons based on visitor experiences and informal reviews. | https://www.novacircle.com/spots/north-america/united-states/illinois/chicago/chicago-il/uic-student-center-west-food-court-8db8f8 |
+| 10 | Sodexo website | This page is the official UIC Dining Services homepage, providing an overview of campus dining options, locations, and meal plan information. | https://uicdining.sodexomyway.com/en-us/ |
 
 ---
 
@@ -110,7 +100,7 @@ It includes general pros and cons based on visitor experiences and informal revi
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
-![Architecture Diagram](images/Screenshot 2026-06-06 192300)
+![Architecture Diagram](images/architecture.png)
 ---
 
 ## AI Tool Plan
