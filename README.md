@@ -25,18 +25,6 @@ My system focuses on campus dining reviews at the University of Illinois Chicago
 
 | # | Source | Type | URL or file path |
 |---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
 | 1 | r/uichicago — dining hall food quality | Reddit thread | https://www.reddit.com/r/uichicago/comments/vpdzh1/how_is_the_dining_hall_food/ |
 | 2 | r/uichicago — portion sizes and reactions | Reddit thread | https://www.reddit.com/r/uichicago/comments/1idebe4/i_just_have_to_laugh_uic_dining/ |
 | 3 | r/uichicago — dining hall menu | Reddit thread | https://www.reddit.com/r/uichicago/comments/1fn1kxn/dining_hall_menu/ |
