@@ -100,8 +100,6 @@ My system focuses on campus dining reviews at the University of Illinois Chicago
 | 2 | Website.1.txt | 0.7093 | "UIC Dining Services Overview — UIC Dining Services provides a variety of dining options for students, faculty, and staff across campus. Dining Services Include: Dining Halls, Retail Dining Locations..." |
 | 3 | Website5.txt | 0.7683 | "Additional Services: UIC Dining supports catering, food trucks, Grubhub ordering, nutrition education, special dietary accommodations, and campus dining events..." |
  
-*Why these chunks are relevant:* The top result from reddit4.txt directly contains a student asking how the UIC dining system works and receiving a detailed answer about meal swipes, dining hall locations, and the 15 meals/week plan. Website.1.txt supports this with official information about dining hall types and services. The retriever correctly prioritized reddit4.txt as the most relevant source with the lowest distance score of 0.52.
- 
 ---
  
 **Query 2: What are common complaints about UIC dining?**
@@ -111,9 +109,6 @@ My system focuses on campus dining reviews at the University of Illinois Chicago
 | 1 | reddit4.txt | 0.8004 | "Reddit r/uichicago Topic: Dining service (stupid) question: how does it work? User: Hi guys! I'm an international student and I know nothing about the dining system at UIC..." |
 | 2 | Website3.txt | 0.8407 | "Review: UIC west Student union — dining options like Subway, pizza, salad, sandwich, smoothie. Review: Huge variety of places..." |
 | 3 | Website4.txt | 0.8480 | "Here, you'll see different kinds of food like Vietnamese, Chinese, pizza, and burgers. It's a favorite quick meal spot in the Medical District area..." |
- 
-*Why these chunks are relevant:* Website3.txt and Website4.txt contain user reviews of UIC dining locations that touch on food variety and quality. However, distance scores above 0.80 indicate weak semantic matches — the chunks discuss dining generally rather than complaints specifically, which is why the system's response was only partially accurate.
- 
 ---
  
 **Query 3: What do students say about portion sizes in UIC dining halls?**
@@ -123,7 +118,6 @@ My system focuses on campus dining reviews at the University of Illinois Chicago
 | 1 | Website.1.txt | 0.8399 | "UIC Dining Services Overview — UIC Dining Services provides a variety of dining options for students, faculty, and staff across campus..." |
 | 2 | Website5.txt | 0.8422 | "Additional Services: UIC Dining supports catering, food trucks, Grubhub ordering, nutrition education, special dietary accommodations..." |
 | 3 | reddit4.txt | 0.8605 | "So there are 2 main dining halls at UIC: the dining hall at James J. Stukel Towers, and the dining hall at Student Center East. Both of them have menus that can be found online..." |
-
 
 ---
 
@@ -224,20 +218,18 @@ Do NOT use any outside knowledge. Always cite which source document(s) your answ
 The interface is built with Gradio and runs locally at http://localhost:7860.
  
 **Input:**
-- *Your question* — a text box where the user types a free-form question about UIC campus dining
+- *Your question*: a text box where the user types a free-form question about UIC campus dining
 **Output:**
-- *Answer* — displays the LLM's grounded response with source filenames cited inline
-- *Retrieved from* — lists the source documents that were retrieved to generate the answer
+- *Answer*: displays the LLM's grounded response with source filenames cited inline
+- *Retrieved from*: lists the source documents that were retrieved to generate the answer
+
 **Sample interaction transcript:**
- 
+  
 > **Input:** How does the UIC meal plan system work?
+
+> **Output:** The UIC meal plan system works by granting students access to campus dining halls and other dining services through the purchase of meal plans (source: Website.1.txt). A "meal swipe" refers to the swipes used to enter the dining halls (source: Website.1.txt). Students can purchase meal plans, such as the 15 meals/week plan, to use at the dining halls (source: reddit4.txt). The meal plans can be used at the two main dining halls, located at James J. Stukel towers and Student Center east, which have menus available online (source: reddit4.txt). Additionally, students can use their meal plans at other dining locations and can manage their dining experience through mobile applications, such as viewing menus and nutrition information (source: Website5.txt, Website.1.txt).
 >
-> **Answer:** The UIC meal plan system works by granting students access to campus dining halls and other dining services through the purchase of meal plans (source: Website1.txt). A "meal swipe" refers to the swipes used to enter the dining halls. Students can purchase meal plans, such as the 15 meals/week plan (source: reddit4.txt). The two main dining halls are located at James J. Stukel Towers and Student Center East. Additionally, students can use the Everyday App to view menus, manage dietary preferences, and track nutritional needs (source: Website1.txt).
->
-> **Retrieved from:**
-> - Website1.txt
-> - reddit4.txt
- 
+> **Retrieved from:** reddit4.txt, Website.1.txt, Website5.txt
 
 ---
 
@@ -266,13 +258,13 @@ The interface is built with Gradio and runs locally at http://localhost:7860.
 
 **Instance 1**
 
-- *What I gave the AI:* The Retrieval Approach section from planning.md, the chunks.json file structure, and the project requirements for Milestone 4.
+- *What I gave the AI:* I provided the Retrieval Approach section from planning.md, my pipeline diagram, and the structure of chunks.json. I specifically asked the AI to implement the embedding stage using SentenceTransformer to store embeddings in ChromaDB with source metadata, and create a retrieval function that returned the top-k chunks with distance scores.
 - *What it produced:* A embed_and_retrieve.py script that loaded chunks, embedded them with all-MiniLM-L6-v2, stored them in ChromaDB, and ran all 5 evaluation queries with distance scores and chunk previews.
 - *What I changed or overrode:* The initial script caused a DuplicateIDError because multiple source files used the same sequential chunk IDs starting from 0. To fix this, document IDs were made unique by combining the source filename with the chunk ID. For example, a chunk ID was changed to a format like `reddit4.txt_0`.
 
 **Instance 2**
 
-- *What I gave the AI:* The implementation was guided by the `retrieval.py` code, the Architecture section of planning.md, and the requirement that all responses be grounded in retrieved documents. Source attribution was also enforced to ensure answers remained transparent and verifiable.
+- *What I gave the AI:* The implementation was guided by the `retrieval.py` code, the Architecture section of planning.md, and the requirement that all responses be grounded in retrieved documents.
 - *What it produced:* query.py with a system prompt enforcing grounded generation and app.py with a Gradio interface showing answer and source fields.
 - *What I changed or overrode:* The generated code initially used `client` for both the Groq API and ChromaDB objects, creating a naming conflict. I resolved this by renaming the Groq object to `groq_client`. I also replaced `load_dotenv(dotenv_path=...)` with `load_dotenv()` after finding that the path-based version was not correctly locating the `.env` file on my system.
 
