@@ -20,7 +20,7 @@ def handle_query(question: str):
 
 
 with gr.Blocks(title="UIC Dining Guide") as demo:
-    gr.Markdown("## 🍽️ UIC Dining Guide\nAsk anything about UIC campus dining based on real student reviews.")
+    gr.Markdown("## UIC Dining Guide\nAsk anything about UIC campus dining based on real student reviews.")
 
     inp = gr.Textbox(
         label="Your question",

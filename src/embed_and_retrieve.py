@@ -9,29 +9,29 @@ import json
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-# ── 1. Load chunks ────────────────────────────────────────────────────────────
-CHUNKS_PATH = "chunks.json"   # adjust path if needed
+# Load chunks
+CHUNKS_PATH = "chunks.json"   
 
 with open(CHUNKS_PATH) as f:
     chunks = json.load(f)
 
 print(f"Loaded {len(chunks)} chunks.\n")
 
-# ── 2. Set up embedding model ─────────────────────────────────────────────────
+# Set up embedding model 
 print("Loading embedding model (all-MiniLM-L6-v2)...")
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# ── 3. Embed all chunks ───────────────────────────────────────────────────────
+# Embed all chunks
 texts = [c["text"] for c in chunks]
 print("Embedding chunks — this may take a moment...")
 embeddings = model.encode(texts, show_progress_bar=True)
 print(f"Embeddings shape: {embeddings.shape}\n")
 
-# ── 4. Load into ChromaDB ─────────────────────────────────────────────────────
-client = chromadb.Client()   # ephemeral / in-memory
+# Load into ChromaDB 
+client = chromadb.Client()   
 collection = client.create_collection(
     name="uic_dining",
-    metadata={"hnsw:space": "cosine"}   # cosine distance → lower = better
+    metadata={"hnsw:space": "cosine"}   
 )
 
 collection.add(
@@ -46,7 +46,7 @@ collection.add(
 print(f"Stored {collection.count()} chunks in ChromaDB.\n")
 
 
-# ── 5. Retrieval function ─────────────────────────────────────────────────────
+# Retrieval function
 def retrieve(query: str, k: int = 5):
     """Return the top-k most relevant chunks with source info and distance."""
     query_embedding = model.encode([query]).tolist()
@@ -65,7 +65,7 @@ def retrieve(query: str, k: int = 5):
     return hits
 
 
-# ── 6. Test with evaluation-plan queries ─────────────────────────────────────
+# Test with evaluation-plan queries
 test_queries = [
     "Which UIC dining location is rated best for food quality?",
     "What do students say about portion sizes in UIC dining halls?",

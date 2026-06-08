@@ -18,16 +18,16 @@ If the context does not contain enough information to answer the question, say:
 Do NOT use any outside knowledge. Always cite which source document(s) your answer came from."""
 
 def ask(question: str, k: int = 5) -> dict:
-    # Step 1: Retrieve relevant chunks
+    # Retrieve relevant chunks
     hits = retrieve(question, k=k)
 
-    # Step 2: Build context string from chunks
+    # Build context string from chunks
     context_parts = []
     for i, h in enumerate(hits, 1):
         context_parts.append(f"[{i}] (source: {h['source']})\n{h['text']}")
     context = "\n\n".join(context_parts)
 
-    # Step 3: Build the user message
+    #Build the user message
     user_message = f"""Context:
 {context}
 
@@ -35,7 +35,7 @@ Question: {question}
 
 Answer (cite sources by filename):"""
 
-    # Step 4: Call Groq LLM
+    # Call Groq LLM
     response = groq_client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
@@ -48,7 +48,7 @@ Answer (cite sources by filename):"""
 
     answer = response.choices[0].message.content.strip()
 
-    # Step 5: Collect unique sources from retrieved chunks
+    # Collect unique sources from retrieved chunks
     sources = list(dict.fromkeys(h["source"] for h in hits))
 
     return {
