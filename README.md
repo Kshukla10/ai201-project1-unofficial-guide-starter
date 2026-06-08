@@ -13,6 +13,7 @@
      Why is this knowledge valuable, and why is it hard to find through official channels?
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+My system focuses on campus dining reviews at the University of Illinois Chicago (UIC), providing students with honest, experience-based insights that are not available on official university websites. By gathering feedback from sources such as Reddit, Yelp, and other review platforms, it centralizes student opinions on food quality, pricing, portion sizes, and meal plan value in one place.
 
 ---
 
@@ -34,6 +35,18 @@
 | 8 | | | |
 | 9 | | | |
 | 10 | | | |
+| # | Source | Type | URL or file path |
+|---|--------|------|-----------------|
+| 1 | r/uichicago — dining hall food quality | Reddit thread | https://www.reddit.com/r/uichicago/comments/vpdzh1/how_is_the_dining_hall_food/ |
+| 2 | r/uichicago — portion sizes and reactions | Reddit thread | https://www.reddit.com/r/uichicago/comments/1idebe4/i_just_have_to_laugh_uic_dining/ |
+| 3 | r/uichicago — dining hall menu | Reddit thread | https://www.reddit.com/r/uichicago/comments/1fn1kxn/dining_hall_menu/ |
+| 4 | r/uichicago — how dining works | Reddit thread | https://www.reddit.com/r/uichicago/comments/ifvi9y/dining_service_stupid_question_how_does_it_work/ |
+| 5 | UIC Student Center West Food Court | Yelp reviews | https://www.yelp.com/biz/uic-student-center-west-food-court-chicago |
+| 6 | UIC Dining official site | University website | https://dining.uic.edu/ |
+| 7 | UIC Student Centers about page | University website | https://studentcenters.uic.edu/about/ |
+| 8 | RestaurantGuru — UIC food court | Review aggregator | https://restaurantguru.com/UIC-Student-Center-West-Food-Court-Chicago |
+| 9 | Novacircle — UIC food court | Review aggregator | https://www.novacircle.com/spots/north-america/united-states/illinois/chicago/chicago-il/uic-student-center-west-food-court-8db8f8 |
+| 10 | Sodexo UIC Dining homepage | Official dining site | https://uicdining.sodexomyway.com/en-us/ |
 
 ---
 
